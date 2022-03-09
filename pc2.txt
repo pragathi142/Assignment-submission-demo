@@ -1,0 +1,60 @@
+package com.jap.weightedaveragecalculator;
+
+import java.util.Scanner;
+
+public class WeightedAverageCalculation {
+
+	// Function accepts academic scores as input parameters and outputs the overall
+	// weighted average percentage of an individual.
+	// Calculate the Overall Percentage
+
+	public static void main(String[] args) {
+
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Enter Assignment Score");
+		int assignmentScore = scanner.nextInt();
+
+		System.out.println("Enter project Score");
+		int projectScore = scanner.nextInt();
+
+		System.out.println("Enter quiz Score");
+		int quizScore = scanner.nextInt();
+
+		System.out.println("Enter midTerm Score");
+		int midTermScore = scanner.nextInt();
+
+		System.out.println("Enter finalExam Score");
+		int finalExamScore = scanner.nextInt();
+
+		WeightedAverageCalculation obj = new WeightedAverageCalculation();
+
+		float result = obj.averageCalculation(assignmentScore, projectScore, quizScore, midTermScore, finalExamScore);
+
+		System.out.println("Overall Percentage: " + result);
+
+	}
+
+	public float averageCalculation(int assignmentScore, int projectScore, int quizScore, int midTermScore,
+			int finalExamScore) {
+
+		float assignmentScorePercentage = (assignmentScore * 10.0F) / 100;
+		System.out.println("assignmentScorePercentage: " + assignmentScorePercentage);
+
+		float projectScorePercentage = (projectScore * 35.0F) / 100;
+		System.out.println("projectScorePercentage: " + projectScorePercentage);
+
+		float quizScorePercentage = (quizScore * 10.0F) / 100;
+		System.out.println("quizScorePercentage: " + quizScorePercentage);
+
+		float midTermScorePercentage = (midTermScore * 15.0F) / 100;
+		System.out.println("midTermScorePercentage: " + midTermScorePercentage);
+
+		float finalExamScorePercentage = (finalExamScore * 30.0F) / 100;
+		System.out.println("finalExamScorePercentage: " + finalExamScorePercentage);
+
+		float overallPercentage = (assignmentScore + projectScore + quizScore + midTermScore + finalExamScore) / 5.0F;
+
+		return overallPercentage;
+	}
+
+}
